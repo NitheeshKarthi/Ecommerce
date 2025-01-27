@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "ae9f3d3d-9035-4f84-93c7-f31749579e00",
+		"name": "E-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41551456"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"item": [
+				{
+					"name": "User/Vendor signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"username\":\"iths\",\r\n    \"email\":\"ma@\",\r\n    \"password\":\"1234\",\r\n    \"role\":\"staff\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin/Add staff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mzc5Njg1NTksImV4cCI6MTczODA1NDk1OX0.djJ8E4v218uJx4o2Xha0vdcOF3D68JPPZdqZEI7TewA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"username\":\"kk\",\r\n    \"email\":\"ra.com\",\r\n    \"password\":\"1234\",\r\n    \"role\":\"staff\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/staff/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"staff",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"a@q\",\r\n    \"password\" : \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Admin create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mzc5NzQzNDMsImV4cCI6MTczODA2MDc0M30.T9aIkAOxqt7VkwRDBdL5dSAgOVzs_ERa4OcOVMfTaPA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sample Product\",\r\n  \"description\": \"This is a sample product.\",\r\n  \"category\": \"Electronics\",\r\n  \"price\": 100.00,\r\n  \"oldPrice\": 120.00,\r\n  \"deliveryAmount\": 10.00,\r\n  \"deliveryFree\": false,\r\n  \"startDate\": \"2025-01-27T00:00:00Z\",\r\n  \"image\": \"<image-file>\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidmVuZG9yIiwiaWF0IjoxNzM3OTc1Mzc0LCJleHAiOjE3MzgwNjE3NzR9.r2v0jwW40hP0croLtofj4Dof4UF6D2Y6ScMdINUldPI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Vendor Product\",\r\n  \"description\": \"Vendor specific product.\",\r\n  \"category\": \"Furniture\",\r\n  \"price\": 250.00,\r\n  \"oldPrice\": 300.00,\r\n  \"deliveryAmount\": 15.00,\r\n  \"deliveryFree\": false,\r\n  \"startDate\": \"2025-02-01T00:00:00Z\",\r\n  \"image\": \"<image-file>\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/vendor/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vendor",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidmVuZG9yIiwiaWF0IjoxNzM3OTc1NzU1LCJleHAiOjE3MzgwNjIxNTV9.V9QVTzdaSlhtKpFCwda2Y5Z7TignXpfQk1bwVAjRGo8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "/search?query=electronics\r\n",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products\n",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products\n"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
